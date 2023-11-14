@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>楊淨的 Media-Query</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            transition: 0.5s;
+        }
+
+        ::before,
+        ::after {
+            content: "";
+            height: 2px;
+            background-color: #ddd;
+            position: absolute;
+            z-index: -1;
+        }
+
+        ::after {
+            transform-origin: top left;
+        }
+
+        ::before {
+            transform-origin: top right;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 35px 10px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .big-box,
+        .box {
+            width: 80%;
+        }
+
+        #big {
+            z-index: 100;
+        }
+
+        img {
+            width: 40%;
+            display: block;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        h6,
+        p {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .line {
+            width: 100%;
+            height: 1px;
+            background-color: #333;
+            margin: 3vh 0;
+        }
+
+        @media(min-width:992px) {
+
+            p,
+            .line {
+                display: none;
+            }
+
+            h1 {
+                font-size: 32px;
+                margin: 5px 0 0 0;
+            }
+
+            h3 {
+                font-size: 27px;
+                text-align: center;
+            }
+
+            h6 {
+                font-size: 18px;
+            }
+
+            #big {
+                width: 18vw;
+            }
+
+
+            img {
+                width: 10vw;
+            }
+
+            .big-box {
+                position: fixed;
+                width: 30%;
+                z-index: 100;
+            }
+
+            .box {
+                position: fixed;
+                width: 10%;
+            }
+
+            .wda {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -45%);
+            }
+
+            .html {
+                top: 5%;
+                left: 2.5%;
+            }
+
+            .css {
+                top: 0;
+                left: 25%;
+            }
+
+            .js {
+                top: 45%;
+                left: 7.5%;
+            }
+
+            .jq {
+                bottom: 5%;
+                left: 20%;
+            }
+
+            .bs {
+                top: 0;
+                right: 20%;
+            }
+
+            .sass {
+                top: 25%;
+                right: 5%;
+            }
+
+            .vue {
+                bottom: 15%;
+                right: 15%;
+            }
+
+            .css::after {
+                width: 10vw;
+                bottom: 25%;
+                left: 100%;
+                transform: rotate(45deg);
+            }
+
+            .html::after {
+                width: 28vw;
+                bottom: 18%;
+                left: 100%;
+                transform: rotate(15deg);
+            }
+
+            .js::after {
+                width: 21vw;
+                top: 40%;
+                left: 110%;
+                transform: rotate(-10deg);
+            }
+
+            .jq::after {
+                width: 12.5vw;
+                top: 0;
+                left: 100%;
+                transform: rotate(-30deg);
+            }
+
+            .bs::before {
+                width: 15vw;
+                bottom: 25%;
+                right: 100%;
+                transform: rotate(-45deg);
+            }
+
+            .sass::before {
+                width: 22.5vw;
+                top: 50%;
+                right: 120%;
+                transform: rotate(-10deg);
+            }
+
+            .vue::before {
+                width: 15vw;
+                top: 0;
+                right: 120%;
+                transform: rotate(25deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wda big-box center">
+        <img src="./images/wda.png" id="big">
+        <h1>泰山職訓局</h1>
+        <h3>從零開始的網頁設計課程</h3>
+        <h6>轉職網頁開發人員&nbsp;&nbsp;&nbsp;掌握就業必備職能</h6>
+        <h6>由淺入深學習技術&nbsp;&nbsp;&nbsp;強化職場的競爭力</h6>
+    </div>
+    <div class="line"></div>
+    <div class="html box">
+        <img src="./images/html.png">
+        <h3>Html</h3>
+        <p>
+            超文本標記語言 (英語：HyperText Markup Language，簡稱：HTML)
+            是一種用於建立網頁的標準標記語言。HTML 是一種基礎技術，常與 CSS、JavaScript 一起被眾多網站用於設計賞心悅目的網頁、網頁應用程式以及行
+            動應用程式的使用者介面。網頁瀏覽器可以讀取 HTML 檔案，並將其彩現成視覺化網頁。HTML 描述了一個網站的結構語意隨著線索的呈現，使之成為一種標記語言而非程式語言。
+        </p>
+    </div>
+    <div class="line"></div>
+    <div class="css box">
+        <img src="./images/css.png">
+        <h3>CSS3</h3>
+        <p>
+            層疊樣式表(英語：Cascading Style Sheets，簡寫CSS)，又稱串樣式列表、級聯樣式表、串接樣式表、階層式樣式表，一種用來為結構化文件(如 HTML 文件或 XML
+            應用)添加樣式(字型、間距和顏色等)的電腦語言，由 W3C 定義和維護。目前最新版本是 CSS2.1，為 W3C 的推薦標準。CSS3 現在已被大部分現代瀏覽器支援，而下一版的 CSS4 仍在開發中。
+        </p>
+    </div>
+    <div class="line"></div>
+    <div class="js box">
+        <img src="./images/js.png">
+        <h3>JavaScript</h3>
+        <p>
+            JavaScript，通常縮寫為 JS，是一種進階直譯語言的程式語言。JavaScript 是一門基於原型、函式先行的語言，是一門多範式的語言，它支援物件導向編程，指令式程式設計，以及函式語言程式設計。
+        </p>
+    </div>
+    <div class="line"></div>
+    <div class="jq box">
+        <img src="./images/jq.png">
+        <h3>jQuery</h3>
+        <p>
+            jQuery 是一套跨瀏覽器的 JavaScript 函式庫，簡化 HTML 與 JavaScript 之間的操作。全球前 10,000 個存取最高的網站中，有 65% 使用了jQuery，是目前最受歡迎的
+            JavaScript 函式庫。
+        </p>
+    </div>
+    <div class="line"></div>
+    <div class="bs box">
+        <img src="./images/bs.png">
+        <h3>Bootstrap</h3>
+        <p>
+            Bootstrap 是一組用於網站和網路應用程式開發的開源前端(所謂「前端」，指的是展現給終端使用者的介面。與之對應的「後端」是在伺服器上面執行的程式碼)框架，包括 HTML、CSS及JavaScript
+            的框架，提供字體排印、 表單、按鈕、導航及其他各種元件及 Javascript 擴充套件，旨在使動態網頁和 Web 應用的開發更加容易。
+        </p>
+    </div>
+    <div class="line"></div>
+    <div class="sass box">
+        <img src="./images/sass.png">
+        <h3>Sass</h3>
+        <p>
+            Sass（英文全稱：Syntactically Awesome Stylesheets）是一個最初由Hampton Catlin設計並由Natalie
+            Weizenbaum開發的層疊樣式表語言。在開發最初版本之後，Weizenbaum和Chris
+            Eppstein繼續通過SassScript來繼續擴充Sass的功能。SassScript是一個在Sass檔案中使用的小型手稿語言。
+        </p>
+    </div>
+    <div class="line"></div>
+    <div class="vue box">
+        <img src="./images/vue.png">
+        <h3>Vue.js</h3>
+        <p>
+            Vue.js（簡稱Vue）是一個用於建立使用者介面的開源MVVM前端JavaScript框架，也是一個建立單頁應用的Web應用框架。Vue.js由尤雨溪建立，由他和其他活躍的核心團隊成員維護。
+        </p>
+    </div>
+</body>
+
+</html>
